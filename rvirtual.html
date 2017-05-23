@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>A-Frame</title>
+     <script src="js/aframe.min.js"></script>
+     <link rel="icon" href="favicon.ico">
+     
+       <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/estilos.css" rel="stylesheet"> 
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="Index.html">Inicio</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="2.html">Cómo llegar</a></li>
+            <li><a href="3.html">Galería de imágenes</a></li>
+            <li><a href="">Realidad Virtual</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+<a-scene>
+  <a-assets>
+    <img id="TexturaPiso" src="imagen/fondo.jpg">
+    <img id="texturaCielo" src="imagen/fondo.jpg">
+    <a-asset-item id="chichenitza-obj" src="modelos3d/chichenitza.obj"></a-asset-item>
+    <a-asset-item id="chichenitza-mtl" src="modelos3d/chichenitza.mtl"></a-asset-item>
+  </a-assets>
+  
+  <a-assets>
+    <a-asset-item id="chichenitza2-obj" src="modelos3d/chichenitza2.obj"></a-asset-item>
+    <a-asset-item id="chichenitza2-mtl" src="modelos3d/chichenitza2.mtl"></a-asset-item>
+  </a-assets>
+  
+  <a-assets>
+    <a-asset-item id="chichenitza3-obj" src="modelos3d/chichenitza3.obj"></a-asset-item>
+    <a-asset-item id="chichen Itza3-mtl" src="modelos3d/chichenitza3.mtl"></a-asset-item>
+  </a-assets>
+  
+    <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+    <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+    <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+ 
+  <a-sky height="2048" radius="30" src="#texturaCielo" theta-length="90" width="2048"></a-sky>
+  <a-light type="ambient" color="#445451"></a-light>
+  <a-light type="point" intensity="2" position="2 4 4"></a-light>
+  <a-plane src="#TexturaPiso" rotation="-90 0 0" height="100" width="100"></a-plane>
+  <a-text value="CHICHENITZA" color="#000"
+          position="-1 0.2 -3" scale="1.5 1.5 1.5"></a-text>
+   
+       
+<!-- Agregar un modelo 3d en formato .obj -->  
+
+  <a-entity obj-model="obj: #chichenitza-obj; mtl: #chichenitza-mtl"  position="0 1 -5" scale=".15 .15 .15"><a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
+      to="0 2.2 -15"></a-animation></a-entity>        
+      
+    <a-entity obj-model="obj: #chichenitza2-obj; mtl: #chichenitza2-mtl"  position="-3 1 5" scale=".12 .12 .12"></a-entity>                             
+        
+    <a-entity obj-model="obj: #chichenitza3-obj; mtl: #chichenitza3-mtl"  position="13 1 5" scale=".10 .10 .10"></a-entity>
+                                    
+  <a-camera>
+    <a-cursor color="#FAFAFA">
+  </a-camera>
+</a-scene>   
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+   
+
+
+</body>
+</html>
